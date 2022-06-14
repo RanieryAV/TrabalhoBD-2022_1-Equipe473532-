@@ -8,12 +8,11 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
--- -----------------------------------------------------
--- Schema equipe473532
--- -----------------------------------------------------
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema equipe473532
@@ -34,16 +33,32 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
+-- Table `equipe473532`.`cursos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`cursos` (
+  `cod_curso` INT NOT NULL,
+  `nome_curso` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`cod_curso`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `equipe473532`.`alunos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `equipe473532`.`alunos` (
   `matricula_aluno` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
-  `cod_curso[Curso]` VARCHAR(45) NOT NULL,
+  `cod_curso` INT NOT NULL,
   `endereco` VARCHAR(45) NULL,
-  `data_de_ingresso` VARCHAR(45) NOT NULL,
-  `data_de_conclusao_prevista` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`matricula_aluno`))
+  `data_de_ingresso` DATE NOT NULL,
+  `data_de_conclusao_prevista` DATE NOT NULL,
+  PRIMARY KEY (`matricula_aluno`),
+  INDEX `cod_curso_idx` (`cod_curso` ASC) VISIBLE,
+  CONSTRAINT `cod_curso`
+    FOREIGN KEY (`cod_curso`)
+    REFERENCES `equipe473532`.`cursos` (`cod_curso`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -53,12 +68,61 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `equipe473532`.`telefones_alunos` (
   `telefone_ID` INT NOT NULL,
   `numero_telefone` VARCHAR(45) NOT NULL,
-  `matricula_aluno` INT NULL,
+  `matricula_aluno` INT NOT NULL,
   PRIMARY KEY (`telefone_ID`),
   INDEX `matricula_aluno_idx` (`matricula_aluno` ASC) VISIBLE,
   CONSTRAINT `matricula_aluno`
     FOREIGN KEY (`matricula_aluno`)
     REFERENCES `equipe473532`.`alunos` (`matricula_aluno`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `equipe473532`.`professores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`professores` (
+  `mat_siape` INT NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  `endereco` VARCHAR(45) NULL,
+  `telefone_celular` VARCHAR(45) NULL,
+  `cod_curso` INT NOT NULL,
+  `data_de_contratacao` DATE NOT NULL,
+  `regime_de_trabalho` VARCHAR(45) NULL,
+  PRIMARY KEY (`mat_siape`),
+  INDEX `cod_curso_idx` (`cod_curso` ASC) VISIBLE,
+  CONSTRAINT `cod_curso`
+    FOREIGN KEY (`cod_curso`)
+    REFERENCES `equipe473532`.`cursos` (`cod_curso`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `equipe473532`.`funcionarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`funcionarios` (
+  `matricula_funcionario` INT NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  `endereco` VARCHAR(45) NULL,
+  PRIMARY KEY (`matricula_funcionario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `equipe473532`.`telefones_funcionarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`telefones_funcionarios` (
+  `telefone_ID` INT NOT NULL,
+  `numero_telefone` VARCHAR(45) NOT NULL,
+  `matricula_funcionario` INT NOT NULL,
+  PRIMARY KEY (`telefone_ID`),
+  INDEX `matricula_funcionario_idx` (`matricula_funcionario` ASC) VISIBLE,
+  CONSTRAINT `matricula_funcionario`
+    FOREIGN KEY (`matricula_funcionario`)
+    REFERENCES `equipe473532`.`funcionarios` (`matricula_funcionario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
