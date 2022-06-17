@@ -40,6 +40,18 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `equipe473532`.`usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`usuarios` (
+  `id` INT NOT NULL,
+  `login` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(45) NOT NULL,
+  `tipo_usuario` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `equipe473532`.`alunos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `equipe473532`.`alunos` (
@@ -49,11 +61,18 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`alunos` (
   `endereco` VARCHAR(45) NULL,
   `data_de_ingresso` DATE NOT NULL,
   `data_de_conclusao_prevista` DATE NOT NULL,
-  PRIMARY KEY (`matricula_aluno`),
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`matricula_aluno`, `id_usuario`),
   INDEX `cod_curso_idx` (`cod_curso` ASC) VISIBLE,
+  INDEX `fk_alunos_usuarios1_idx` (`id_usuario` ASC) VISIBLE,
   CONSTRAINT `cod_curso`
     FOREIGN KEY (`cod_curso`)
     REFERENCES `equipe473532`.`cursos` (`cod_curso`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_alunos_usuarios1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `equipe473532`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -87,11 +106,18 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`professores` (
   `cod_curso` INT NOT NULL,
   `data_de_contratacao` DATE NOT NULL,
   `regime_de_trabalho` VARCHAR(45) NULL,
-  PRIMARY KEY (`mat_siape`),
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`mat_siape`, `id_usuario`),
   INDEX `cod_curso_idx` (`cod_curso` ASC) VISIBLE,
+  INDEX `fk_professores_usuarios1_idx` (`id_usuario` ASC) VISIBLE,
   CONSTRAINT `cod_curso`
     FOREIGN KEY (`cod_curso`)
     REFERENCES `equipe473532`.`cursos` (`cod_curso`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_professores_usuarios1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `equipe473532`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -104,7 +130,14 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`funcionarios` (
   `matricula_funcionario` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `endereco` VARCHAR(45) NULL,
-  PRIMARY KEY (`matricula_funcionario`))
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`matricula_funcionario`, `id_usuario`),
+  INDEX `fk_funcionarios_usuarios1_idx` (`id_usuario` ASC) VISIBLE,
+  CONSTRAINT `fk_funcionarios_usuarios1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `equipe473532`.`usuarios` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
