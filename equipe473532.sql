@@ -1,18 +1,15 @@
-CREATE DATABASE equipe473532; # Criar banco de dados com o nome solicitado pelo professor
-USE equipe473532; # Comando necessário para começar a criar tabelas no banco de dados
-
-# A partir daqui, começam as definições das tabelas pedidas no descritivo do trabalho
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- MySQL Workbench Forward Engineering
-
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema equipe473532
+-- -----------------------------------------------------
 
 -- -----------------------------------------------------
 -- Schema equipe473532
@@ -123,6 +120,33 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`telefones_funcionarios` (
   CONSTRAINT `matricula_funcionario`
     FOREIGN KEY (`matricula_funcionario`)
     REFERENCES `equipe473532`.`funcionarios` (`matricula_funcionario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `equipe473532`.`autores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`autores` (
+  `email` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  `nacionalidade` VARCHAR(45) NULL,
+  PRIMARY KEY (`email`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `equipe473532`.`livros_tem_autores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `equipe473532`.`livros_tem_autores` (
+  `ISBN` BIGINT(13) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC) VISIBLE,
+  UNIQUE INDEX `email_autor_UNIQUE` (`email` ASC) VISIBLE,
+  CONSTRAINT `email`
+    FOREIGN KEY (`email`)
+    REFERENCES `equipe473532`.`autores` (`email`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
