@@ -263,18 +263,21 @@ INSERT INTO categoria VALUES(8, 'Terror');
 -- Povoando a tabela de Autores 
 -- -----------------------------------------------------
 
-INSERT INTO autor VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa Silva', 'Brasileira');
-INSERT INTO autor VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
-INSERT INTO autor VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
-INSERT INTO autor VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
+INSERT INTO autores VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa Silva', 'Brasileira');
+INSERT INTO autores VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
+INSERT INTO autores VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
+INSERT INTO autores VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Cursos 
 -- -----------------------------------------------------
 
-INSERT INTO cursos VALUES(1, 'Engenharia de Computação');
-INSERT INTO cursos VALUES(2, 'Engenharia Elétrica');
-INSERT INTO cursos VALUES(3, 'Psicologia');
+INSERT INTO cursos VALUES(01, 'Engenharia de Computação');
+INSERT INTO cursos VALUES(02, 'Engenharia Elétrica');
+INSERT INTO cursos VALUES(03, 'Psicologia');
+INSERT INTO cursos VALUES(04, 'Medicina');
+INSERT INTO cursos VALUES(05, 'Artes Cênicas');
+INSERT INTO cursos VALUES(06, 'Filosofia');
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Usuarios
@@ -295,8 +298,20 @@ INSERT INTO cursos VALUES(3, 'Psicologia');
 -- -----------------------------------------------------
 -- Povoando a tabela de Alunos
 -- -----------------------------------------------------
+INSERT INTO alunos VALUES(0000001, 'Samuel Falcão Xavier', '01', 'Rua A', '2015-02-25', '2019-12-31');
+INSERT INTO alunos VALUES(0000002, 'Raíssa Frois Camarinho', '02', 'Rua B', '2016-07-25', '2021-07-15');
+INSERT INTO alunos VALUES(0000003, 'Nataniel Sardo Grilo', '03', 'Rua C', '2016-02-25', '2020-12-31');
+INSERT INTO alunos VALUES(0000004, 'André Mourão Taveiros', '04', 'Rua D', '2017-02-25', '2022-12-31');
+INSERT INTO alunos VALUES(0000005, 'Virgínia Vaz Caeira', '05', 'Rua E', '2018-07-25', '2022-07-15');
+INSERT INTO alunos VALUES(0000006, 'Lucas Dantas Abranches', '06', 'Rua F', '2019-02-25', '2022-12-31');
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Telefones_Alunos
 -- -----------------------------------------------------
-
+INSERT INTO telefones_alunos VALUES(001, '+5504188912345678', 0000001);
+INSERT INTO telefones_alunos VALUES(002, '+5504188998765432', 0000001);
+INSERT INTO telefones_alunos VALUES(003, '+5504188951697843', 0000002);
+INSERT INTO telefones_alunos VALUES(004, '+5504188961475298', 0000003);
+INSERT INTO telefones_alunos VALUES(005, '+5504188995387459', 0000004);
+INSERT INTO telefones_alunos VALUES(006, '+5504188994381576', 0000005);
+INSERT INTO telefones_alunos VALUES(007, '+5504188957894314', 0000006);
