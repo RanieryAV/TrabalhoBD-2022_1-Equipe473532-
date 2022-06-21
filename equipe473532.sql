@@ -267,5 +267,36 @@ INSERT INTO autor VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa S
 INSERT INTO autor VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
 INSERT INTO autor VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
 INSERT INTO autor VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
-INSERT INTO autor VALUES('rjpalacio@hotmail.com','R J Palacio', 'Americana');
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Cursos 
+-- -----------------------------------------------------
+
+INSERT INTO cursos VALUES(1, 'Engenharia de Computação');
+INSERT INTO cursos VALUES(2, 'Engenharia Elétrica');
+INSERT INTO cursos VALUES(3, 'Psicologia');
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Usuarios
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Funcionarios
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Telefones_Funcionarios
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Professores
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Alunos
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Telefones_Alunos
+-- -----------------------------------------------------
 
