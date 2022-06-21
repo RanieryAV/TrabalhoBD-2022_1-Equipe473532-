@@ -240,3 +240,32 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- -----------------------------------------------------
+-- Povoamento das tabelas
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Povoando a tabela de categoria
+-- -----------------------------------------------------
+
+INSERT INTO categoria VALUES(1, 'Ação');
+INSERT INTO categoria VALUES(2, 'Ficção');
+INSERT INTO categoria VALUES(3, 'Romance');
+INSERT INTO categoria VALUES(4, 'Infantil');
+INSERT INTO categoria VALUES(5, 'Fantasia');
+INSERT INTO categoria VALUES(6, 'Auto-Ajuda');
+INSERT INTO categoria VALUES(7, 'Administração');
+INSERT INTO categoria VALUES(8, 'Terror');
+
+-- -----------------------------------------------------
+-- Povoando a tabela de Autores 
+-- -----------------------------------------------------
+
+INSERT INTO autor VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa Silva', 'Brasileira');
+INSERT INTO autor VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
+INSERT INTO autor VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
+INSERT INTO autor VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
+INSERT INTO autor VALUES('rjpalacio@hotmail.com','R J Palacio', 'Americana');
+
