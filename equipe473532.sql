@@ -282,19 +282,31 @@ INSERT INTO cursos VALUES(06, 'Filosofia');
 -- -----------------------------------------------------
 -- Povoando a tabela de Usuarios
 -- -----------------------------------------------------
-
-
+INSERT INTO usuarios VALUES(01, 'Admin', 'root', 'administrador');
+INSERT INTO usuarios VALUES(02, 'claraC', 'cla202', 'bibliotecario');
+INSERT INTO usuarios VALUES(03, 'samualM', 'samu222', 'alunos');
+INSERT INTO usuarios VALUES(04, 'raissaR', 'rai569', 'alunos');
+INSERT INTO usuarios VALUES(05, 'natanielN', 'natan036', 'alunos');
+INSERT INTO usuarios VALUES(06, 'andreA', 'andre378', 'alunos');
+INSERT INTO usuarios VALUES(07, 'virginiaV', 'vi459', 'alunos');
+INSERT INTO usuarios VALUES(08, 'lucasL', 'lucas941', 'alunos');
+INSERT INTO usuarios VALUES(09, 'leviL', 'levi058', 'funcionarios');
+INSERT INTO usuarios VALUES(10, 'paulaP', 'paula654', 'funcionarios');
+INSERT INTO usuarios VALUES(11, 'sandroS', 'sandro875', 'funcionarios');
+INSERT INTO usuarios VALUES(12, 'iolandaI', 'iol369', 'funcionarios');
+INSERT INTO usuarios VALUES(13, 'rebecaR', 'reb147', 'funcionarios');
+INSERT INTO usuarios VALUES(14, 'yagoY', 'yago258', 'funcionarios');
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Funcionarios
 -- -----------------------------------------------------
 
-INSERT INTO funcionarios VALUES(498756, 'Lucas Vaz Sousa', 'Rua A');
-INSERT INTO funcionarios VALUES(421589, 'Paula Amorim Ferreira', 'Rua B');
-INSERT INTO funcionarios VALUES(432517, 'Sandro Meneses Moura', 'Rua C');
-INSERT INTO funcionarios VALUES(406731, 'Iolanda Rodrigues Silva', 'Rua D');
-INSERT INTO funcionarios VALUES(457328, 'Rebeca Fragoso Mesquita', 'Rua E');
-INSERT INTO funcionarios VALUES(416574, 'Yago Pires Cardoso', 'Rua F');
+INSERT INTO funcionarios VALUES(498756, 'Levi Vaz Sousa', 'Rua A', 09);
+INSERT INTO funcionarios VALUES(421589, 'Paula Amorim Ferreira', 'Rua B', 10);
+INSERT INTO funcionarios VALUES(432517, 'Sandro Meneses Moura', 'Rua C', 11);
+INSERT INTO funcionarios VALUES(406731, 'Iolanda Rodrigues Silva', 'Rua D', 12);
+INSERT INTO funcionarios VALUES(457328, 'Rebeca Fragoso Mesquita', 'Rua E', 13);
+INSERT INTO funcionarios VALUES(416574, 'Yago Pires Cardoso', 'Rua F', 14);
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Telefones_Funcionarios
@@ -314,12 +326,12 @@ INSERT INTO telefones_funcionarios VALUES(006, '+5502185994362069', 457328);
 -- -----------------------------------------------------
 -- Povoando a tabela de Alunos
 -- -----------------------------------------------------
-INSERT INTO alunos VALUES(0000001, 'Samuel Falcão Xavier', '01', 'Rua A', '2015-02-25', '2019-12-31');
-INSERT INTO alunos VALUES(0000002, 'Raíssa Frois Camarinho', '02', 'Rua B', '2016-07-25', '2021-07-15');
-INSERT INTO alunos VALUES(0000003, 'Nataniel Sardo Grilo', '03', 'Rua C', '2016-02-25', '2020-12-31');
-INSERT INTO alunos VALUES(0000004, 'André Mourão Taveiros', '04', 'Rua D', '2017-02-25', '2022-12-31');
-INSERT INTO alunos VALUES(0000005, 'Virgínia Vaz Caeira', '05', 'Rua E', '2018-07-25', '2022-07-15');
-INSERT INTO alunos VALUES(0000006, 'Lucas Dantas Abranches', '06', 'Rua F', '2019-02-25', '2022-12-31');
+INSERT INTO alunos VALUES(0000001, 'Samuel Falcão Xavier', '01', 'Rua A', '2015-02-25', '2019-12-31', 03);
+INSERT INTO alunos VALUES(0000002, 'Raíssa Frois Camarinho', '02', 'Rua B', '2016-07-25', '2021-07-15', 04);
+INSERT INTO alunos VALUES(0000003, 'Nataniel Sardo Grilo', '03', 'Rua C', '2016-02-25', '2020-12-31', 05);
+INSERT INTO alunos VALUES(0000004, 'André Mourão Taveiros', '04', 'Rua D', '2017-02-25', '2022-12-31', 06);
+INSERT INTO alunos VALUES(0000005, 'Virgínia Vaz Caeira', '05', 'Rua E', '2018-07-25', '2022-07-15', 07);
+INSERT INTO alunos VALUES(0000006, 'Lucas Dantas Abranches', '06', 'Rua F', '2019-02-25', '2022-12-31', 08);
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Telefones_Alunos
