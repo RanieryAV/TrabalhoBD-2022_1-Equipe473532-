@@ -283,13 +283,29 @@ INSERT INTO cursos VALUES(06, 'Filosofia');
 -- Povoando a tabela de Usuarios
 -- -----------------------------------------------------
 
+
+
 -- -----------------------------------------------------
 -- Povoando a tabela de Funcionarios
 -- -----------------------------------------------------
 
+INSERT INTO funcionarios VALUES(498756, 'Lucas Vaz Sousa', 'Rua A');
+INSERT INTO funcionarios VALUES(421589, 'Paula Amorim Ferreira', 'Rua B');
+INSERT INTO funcionarios VALUES(432517, 'Sandro Meneses Moura', 'Rua C');
+INSERT INTO funcionarios VALUES(406731, 'Iolanda Rodrigues Silva', 'Rua D');
+INSERT INTO funcionarios VALUES(457328, 'Rebeca Fragoso Mesquita', 'Rua E');
+INSERT INTO funcionarios VALUES(416574, 'Yago Pires Cardoso', 'Rua F');
+
 -- -----------------------------------------------------
 -- Povoando a tabela de Telefones_Funcionarios
 -- -----------------------------------------------------
+
+INSERT INTO telefones_funcionarios VALUES(001, '+5502185994367854', 406731);
+INSERT INTO telefones_funcionarios VALUES(002, '+5502185992587941', 406731);
+INSERT INTO telefones_funcionarios VALUES(003, '+5502185991369428', 432517);
+INSERT INTO telefones_funcionarios VALUES(004, '+5502185994798203', 432517);
+INSERT INTO telefones_funcionarios VALUES(005, '+5502185992009866', 457328);
+INSERT INTO telefones_funcionarios VALUES(006, '+5502185994362069', 457328);
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Professores
