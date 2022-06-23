@@ -103,24 +103,16 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `equipe473532`.`professores` (
   `mat_siape` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
-  `endereco` VARCHAR(45) NOT NULL,
-  `telefone_celular` VARCHAR(45) NOT NULL,
-  `cod_curso` INT NOT NULL,
+  `endereco` VARCHAR(45) NULL DEFAULT NULL,
+  `telefone_celular` VARCHAR(45) NULL DEFAULT NULL,
+  `codigo_curso` INT NOT NULL,
   `data_de_contratacao` DATE NOT NULL,
-  `regime_de_trabalho` VARCHAR(45) NOT NULL,
-  `id_usuario` INT NOT NULL,
-  `professorescol` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`mat_siape`, `id_usuario`),
-  INDEX `cod_curso_idx` (`cod_curso` ASC),
-  INDEX `fk_professores_usuarios1_idx` (`id_usuario` ASC),
-  CONSTRAINT `cod_curso`
-    FOREIGN KEY (`cod_curso`)
+  `regime_de_trabalho` ENUM('20h', '40h', 'DE') NOT NULL,
+  PRIMARY KEY (`mat_siape`),
+  INDEX `cod_curso_idx` (`codigo_curso` ASC) VISIBLE,
+  CONSTRAINT `codigo_curso`
+    FOREIGN KEY (`codigo_curso`)
     REFERENCES `equipe473532`.`cursos` (`cod_curso`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_professores_usuarios1`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `equipe473532`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -322,16 +314,21 @@ INSERT INTO telefones_funcionarios VALUES(006, '+5502185994362069', 457328);
 -- -----------------------------------------------------
 -- Povoando a tabela de Professores
 -- -----------------------------------------------------
-
+INSERT INTO professores VALUES(000001, 'Priscila Cachoeira Velasco', 'Rua G', '+5504188975498632', 01, '2016-04-03', 'DE');
+INSERT INTO professores VALUES(000002, 'Janilson Toscano Freire', 'Rua H', '+5504188964821975', 02, '2008-09-24', 'DE');
+INSERT INTO professores VALUES(000003, 'Manuela Lagos Peixoto', 'Rua I', '+5504188998547135', 03, '2011-01-17', '20h');
+INSERT INTO professores VALUES(000004, 'Reinaldo Reino Ponte', 'Rua J', '+5504188935748912', 04, '2008-05-16', '20h');
+INSERT INTO professores VALUES(000005, 'Melina Rodrigues Mondragão', 'Rua K', '+5504188958497621', 05, '2008-08-23', '40h');
+INSERT INTO professores VALUES(000006, 'Silvana Serro Lampreia', 'Rua L', '+5504188974851296', 06, '2008-10-02', '40h');
 -- -----------------------------------------------------
 -- Povoando a tabela de Alunos
 -- -----------------------------------------------------
-INSERT INTO alunos VALUES(0000001, 'Samuel Falcão Xavier', '01', 'Rua A', '2015-02-25', '2019-12-31', 03);
-INSERT INTO alunos VALUES(0000002, 'Raíssa Frois Camarinho', '02', 'Rua B', '2016-07-25', '2021-07-15', 04);
-INSERT INTO alunos VALUES(0000003, 'Nataniel Sardo Grilo', '03', 'Rua C', '2016-02-25', '2020-12-31', 05);
-INSERT INTO alunos VALUES(0000004, 'André Mourão Taveiros', '04', 'Rua D', '2017-02-25', '2022-12-31', 06);
-INSERT INTO alunos VALUES(0000005, 'Virgínia Vaz Caeira', '05', 'Rua E', '2018-07-25', '2022-07-15', 07);
-INSERT INTO alunos VALUES(0000006, 'Lucas Dantas Abranches', '06', 'Rua F', '2019-02-25', '2022-12-31', 08);
+INSERT INTO alunos VALUES(0000001, 'Samuel Falcão Xavier', 01, 'Rua A', '2015-02-25', '2019-12-31', 03);
+INSERT INTO alunos VALUES(0000002, 'Raíssa Frois Camarinho', 02, 'Rua B', '2016-07-25', '2021-07-15', 04);
+INSERT INTO alunos VALUES(0000003, 'Nataniel Sardo Grilo', 03, 'Rua C', '2016-02-25', '2020-12-31', 05);
+INSERT INTO alunos VALUES(0000004, 'André Mourão Taveiros', 04, 'Rua D', '2017-02-25', '2022-12-31', 06);
+INSERT INTO alunos VALUES(0000005, 'Virgínia Vaz Caeira', 05, 'Rua E', '2018-07-25', '2022-07-15', 07);
+INSERT INTO alunos VALUES(0000006, 'Lucas Dantas Abranches', 06, 'Rua F', '2019-02-25', '2022-12-31', 08);
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Telefones_Alunos
