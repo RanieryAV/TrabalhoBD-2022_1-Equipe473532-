@@ -259,6 +259,27 @@ INSERT INTO autores VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa
 INSERT INTO autores VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
 INSERT INTO autores VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
 INSERT INTO autores VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
+INSERT INTO autores VALUES('thalitareboucas@hotmail.com','Thalita Rebouças', 'Brasileira');
+
+-- -----------------------------------------------------
+-- Povoando a tabela de LIVROS 
+-- ----------------------------------------------------
+
+INSERT INTO livros VALUES(9788525058393, 'Mentes Inquietas', 2009, 'Principium ', 105000 , 6);
+INSERT INTO livros VALUES(9788543101972, 'O Segredo', 2006, 'Editora Sextante',35000000, 6);
+INSERT INTO livros VALUES(9788532530783, 'Harry Potter e a Pedra Filosofal', 1997, 'Rocco', 400000000 , 2);
+INSERT INTO livros VALUES(9789722342391, 'Os jogos da fome Livro', 2009, 'Editorial Presenca', 60000000, 1);
+INSERT INTO livros VALUES(9788579800511, 'Ela disse, Ele disse', 2011, 'Rocco Jovens Leitores', 930000, 3);
+
+-- -----------------------------------------------------
+-- Povoando a tabela de ESCREVE 
+-- ----------------------------------------------------
+
+INSERT INTO escreve VALUES ('anabeatrizbarbosa@hotmail.com', 9788525058393);
+INSERT INTO escreve VALUES('thalitareboucas@hotmail.com', 9788579800511);
+INSERT INTO escreve VALUES('jkrowling@hotmail.com', 9788532530783);
+INSERT INTO escreve VALUES('suzannecollins@hotmail.com', 9789722342391);
+INSERT INTO escreve VALUES('rhondabyrne@hotmail.com', 9788543101972);
 
 -- -----------------------------------------------------
 -- Povoando a tabela de Cursos 
