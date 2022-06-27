@@ -174,14 +174,13 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`livros` (
   `editora` VARCHAR(50) NOT NULL,
   `quantidade_copias` BIGINT NOT NULL,
   `categoria_codigo_da_categoria` INT NOT NULL,
-  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC),
+  `autores` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`ISBN`),
-  INDEX `fk_livros_categoria1_idx` (`categoria_codigo_da_categoria` ASC),
+  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC) VISIBLE,
+  INDEX `fk_livros_categoria1_idx` (`categoria_codigo_da_categoria` ASC) VISIBLE,
   CONSTRAINT `fk_livros_categoria1`
     FOREIGN KEY (`categoria_codigo_da_categoria`)
-    REFERENCES `equipe473532`.`categoria` (`codigo_da_categoria`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `equipe473532`.`categoria` (`codigo_da_categoria`))
 ENGINE = InnoDB;
 
 
@@ -258,18 +257,18 @@ INSERT INTO categoria VALUES(8, 'Terror');
 INSERT INTO autores VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa Silva', 'Brasileira');
 INSERT INTO autores VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
 INSERT INTO autores VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
-INSERT INTO autores VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
+INSERT INTO autores VALUES('rhondabyrne@hotmail.com','Rhonda Byrne', 'Australiana');
 INSERT INTO autores VALUES('thalitareboucas@hotmail.com','Thalita Rebouças', 'Brasileira');
 
 -- -----------------------------------------------------
 -- Povoando a tabela de LIVROS 
 -- ----------------------------------------------------
 
-INSERT INTO livros VALUES(9788525058393, 'Mentes Inquietas', 2009, 'Principium ', 105000 , 6);
-INSERT INTO livros VALUES(9788543101972, 'O Segredo', 2006, 'Editora Sextante',35000000, 6);
-INSERT INTO livros VALUES(9788532530783, 'Harry Potter e a Pedra Filosofal', 1997, 'Rocco', 400000000 , 2);
-INSERT INTO livros VALUES(9789722342391, 'Os jogos da fome Livro', 2009, 'Editorial Presenca', 60000000, 1);
-INSERT INTO livros VALUES(9788579800511, 'Ela disse, Ele disse', 2011, 'Rocco Jovens Leitores', 930000, 3);
+INSERT INTO livros VALUES(9788525058393, 'Mentes Inquietas', 2009, 'Principium ', 105000 , 6, 'Ana Beatriz Barbosa Silva');
+INSERT INTO livros VALUES(9788543101972, 'O Segredo', 2006, 'Editora Sextante',35000000, 6, 'Rhonda Byrne');
+INSERT INTO livros VALUES(9788532530783, 'Harry Potter e a Pedra Filosofal', 1997, 'Rocco', 400000000 , 2, 'J. K. Rowling');
+INSERT INTO livros VALUES(9789722342391, 'Os jogos da fome', 2009, 'Editorial Presenca', 60000000, 1, 'Suzanne Collins');
+INSERT INTO livros VALUES(9788579800511, 'Ela disse, Ele disse', 2011, 'Rocco Jovens Leitores', 930000, 3, 'Thalita Rebouças');
 
 -- -----------------------------------------------------
 -- Povoando a tabela de ESCREVE 
