@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`reserva` (
   INDEX `fk_usuarios_has_livros_usuarios1_idx` (`usuarios_id` ASC),
   CONSTRAINT `fk_usuarios_has_livros_livros1`
     FOREIGN KEY (`livros_ISBN`)
-    REFERENCES `equipe473532`.`livros` (`ISBN`),
+    REFERENCES `equipe473532`.`livros` (`ISBN`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_usuarios_has_livros_usuarios1`
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `equipe473532`.`reserva` (
     REFERENCES `equipe473532`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
