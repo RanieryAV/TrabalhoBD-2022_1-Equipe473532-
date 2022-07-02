@@ -384,6 +384,17 @@ INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALU
 COMMIT;
 
 -- -----------------------------------------------------
+-- Povoando a tabela de Autores 
+-- -----------------------------------------------------
+
+INSERT INTO autores VALUES('anabeatrizbarbosa@hotmail.com', 'Ana Beatriz Barbosa Silva', 'Brasileira');
+INSERT INTO autores VALUES('suzannecollins@hotmail.com','Suzanne Collins', 'Americana');
+INSERT INTO autores VALUES('jkrowling@hotmail.com','J. K. Rowling', 'Britanica');
+INSERT INTO autores VALUES('rhondabyrne@hotmail.com','Rhonda Byrne ', 'Australiana');
+INSERT INTO autores VALUES('thalitareboucas@hotmail.com','Thalita Rebouças', 'Brasileira');
+
+COMMIT;
+-- -----------------------------------------------------
 -- Data for table `equipe473532`.`livros`
 -- -----------------------------------------------------
 START TRANSACTION;
@@ -414,6 +425,12 @@ INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) V
 INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (12, 'iolandaI', 'iol369', 'funcionarios');
 INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (13, 'rebecaR', 'reb147', 'funcionarios');
 INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (14, 'yagoY', 'yago258', 'funcionarios');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (15, 'priscilaC', 'pris985', 'professores');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (16, 'janilsonT', 'janil831', 'professores');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (17, 'manuelaL', 'manu437', 'professores');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (18, 'reinaldoR', 'rei718', 'professores');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (19, 'melinaR', 'melin256', 'professores');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (20, 'silvanaS', 'silva514', 'professores');
 
 COMMIT;
 
@@ -422,12 +439,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `equipe473532`;
-INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (01, 'Engenharia de Computação');
-INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (02, 'Engenharia Elétrica');
-INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (03, 'Psicologia');
-INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (04, 'Música');
-INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (05, 'Artes Cênicas');
-INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (06, 'Filosofia');
+INSERT INTO `equipe473532`.`cursos` (`cod_curso`, `nome_curso`) VALUES (01, 'Engenharia de Computação');
+INSERT INTO `equipe473532`.`cursos` (`cod_curso`, `nome_curso`) VALUES (02, 'Engenharia Elétrica');
+INSERT INTO `equipe473532`.`cursos` (`cod_curso`, `nome_curso`) VALUES (03, 'Psicologia');
+INSERT INTO `equipe473532`.`cursos` (`cod_curso`, `nome_curso`) VALUES (04, 'Medicina');
+INSERT INTO `equipe473532`.`cursos` (`cod_curso`, `nome_curso`) VALUES (05, 'Artes Cênicas');
+INSERT INTO `equipe473532`.`cursos` (`cod_curso`, `nome_curso`) VALUES (06, 'Filosofia');
 
 COMMIT;
 
@@ -436,12 +453,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `equipe473532`;
-INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES (0000001, 'Samuel Falcão Xavier', 01, 'Rua A', '2015-02-25', '2019-12-31', 03);
-INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000002, 'Raíssa Frois Camarinho', 02, 'Rua B', '2016-07-25', '2021-07-15', 04);
-INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000003, 'Nataniel Sardo Grilo', 03, 'Rua C', '2016-02-25', '2020-12-31', 05);
-INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000004, 'André Mourão Taveiros', 04, 'Rua D', '2017-02-25', '2022-12-31', 06);
-INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000005, 'Virgínia Vaz Caeira', 05, 'Rua E', '2018-07-25', '2022-07-15', 07);
-INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`)VALUES(0000006, 'Lucas Dantas Abranches', 06, 'Rua F', '2019-02-25', '2022-12-31', 08);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao_prevista`, `id_usuario`) VALUES (0000001, 'Samuel Falcão Xavier', 01, 'Rua A', '2019-02-25', '2023-12-31', 03);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao_prevista`, `id_usuario`) VALUES(0000002, 'Raíssa Frois Camarinho', 02, 'Rua B', '2018-07-25', '2023-07-15', 04);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao_prevista`, `id_usuario`) VALUES(0000003, 'Nataniel Sardo Grilo', 03, 'Rua C', '2020-02-25', '2024-12-31', 05);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao_prevista`, `id_usuario`) VALUES(0000004, 'André Mourão Taveiros', 04, 'Rua D', '2017-02-25', '2022-12-31', 06);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao_prevista`, `id_usuario`) VALUES(0000005, 'Virgínia Vaz Caeira', 05, 'Rua E', '2021-07-25', '2025-07-15', 07);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao_prevista`, `id_usuario`) VALUES(0000006, 'Lucas Dantas Abranches', 06, 'Rua F', '2019-02-25', '2022-12-31', 08);
 COMMIT;
 
 -- -----------------------------------------------------
@@ -449,12 +466,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `equipe473532`;
-INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES (000001, 'Priscila Cachoeira Velasco', 'Rua G', '+5504188975498632', 01, '2016-04-03', 'DE');
-INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000002, 'Janilson Toscano Freire', 'Rua H', '+5504188964821975', 02, '2008-09-24', 'DE');
-INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000003, 'Manuela Lagos Peixoto', 'Rua I', '+5504188998547135', 03, '2011-01-17', '20h');
-INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000004, 'Reinaldo Reino Ponte', 'Rua J', '+5504188935748912', 04, '2008-05-16', '20h');
-INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000005, 'Melina Rodrigues Mondragão', 'Rua K', '+5504188958497621', 05, '2008-08-23', '40h');
-INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000006, 'Silvana Serro Lampreia', 'Rua L', '+5504188974851296', 06, '2008-10-02', '40h');
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES (000001, 'Priscila Cachoeira Velasco', 'Rua G', '+5504188975498632', 01, '2016-04-03', 'DE', 15);
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000002, 'Janilson Toscano Freire', 'Rua H', '+5504188964821975', 02, '2008-09-24', 'DE', 16);
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000003, 'Manuela Lagos Peixoto', 'Rua I', '+5504188998547135', 03, '2011-01-17', '20h', 17);
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000004, 'Reinaldo Reino Ponte', 'Rua J', '+5504188935748912', 04, '2008-05-16', '20h', 18);
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000005, 'Melina Rodrigues Mondragão', 'Rua K', '+5504188958497621', 05, '2008-08-23', '40h', 19);
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000006, 'Silvana Serro Lampreia', 'Rua L', '+5504188974851296', 06, '2008-10-02', '40h', 20);
 
 COMMIT;
 
