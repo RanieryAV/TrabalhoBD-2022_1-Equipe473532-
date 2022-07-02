@@ -363,3 +363,153 @@ DELIMITER ;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Povoamento das tabelas
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`categoria`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (1, 'Ação');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (2, 'Ficção');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (3, 'Romance');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (4, 'Infantil');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (5, 'Fantasia');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (6, 'Auto-Ajuda');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (7, 'Administração');
+INSERT INTO `equipe473532`.`categoria` (`codigo_da_categoria`, `descricao`) VALUES (8, 'Terror');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`livros`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`livros` (`ISBN`, `titulo`, `ano_lancamento`, `editora`, `quantidade_copias`, `categoria_codigo_da_categoria`, `autores`) VALUES (9788525058393, 'Mentes Inquietas', 2009, 'Principium', 105000, 6, 'Ana Beatriz Barbosa Silva');
+INSERT INTO `equipe473532`.`livros` (`ISBN`, `titulo`, `ano_lancamento`, `editora`, `quantidade_copias`, `categoria_codigo_da_categoria`, `autores`) VALUES (9788543101972, 'O Segredo', 2006, 'Editora Sextante', 35000000, 6, 'Rhonda Byrne');
+INSERT INTO `equipe473532`.`livros` (`ISBN`, `titulo`, `ano_lancamento`, `editora`, `quantidade_copias`, `categoria_codigo_da_categoria`, `autores`) VALUES (9788532530783, 'Harry Potter e a Pedra Filosofal', 1997, 'Rocco', 40000000, 6, 'J. K. Rowling');
+INSERT INTO `equipe473532`.`livros` (`ISBN`, `titulo`, `ano_lancamento`, `editora`, `quantidade_copias`, `categoria_codigo_da_categoria`, `autores`) VALUES (9789722342391, 'Os jogos da fome', 2009, 'Editorial Presenca', 60000000, 1, 'Suzanne Collins');
+INSERT INTO `equipe473532`.`livros` (`ISBN`, `titulo`, `ano_lancamento`, `editora`, `quantidade_copias`, `categoria_codigo_da_categoria`, `autores`) VALUES (9788579800511, 'Ela disse, Ele disse', 2011, 'Rocco Jovens Leitores', 930000, 3, 'Thalita Rebouças');
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`usuarios`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (01, 'Admin', 'root', 'administrador');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (02, 'claraC', 'cla202', 'bibliotecario');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (03, 'samualM', 'samu222', 'alunos');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (04, 'raissaR', 'rai569','alunos');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (05, 'natanielN', 'natan036', 'alunos');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (06, 'andreA', 'andre378', 'alunos');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (07, 'virginiaV', 'vi459', 'alunos');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (08, 'lucasL', 'lucas941', 'alunos');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (09, 'leviL', 'levi058', 'funcionarios');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (10, 'paulaP', 'paula654', 'funcionarios');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (11, 'sandroS', 'sandro875', 'funcionarios');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (12, 'iolandaI', 'iol369', 'funcionarios');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (13, 'rebecaR', 'reb147', 'funcionarios');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (14, 'yagoY', 'yago258', 'funcionarios');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`cursos`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (01, 'Engenharia de Computação');
+INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (02, 'Engenharia Elétrica');
+INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (03, 'Psicologia');
+INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (04, 'Música');
+INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (05, 'Artes Cênicas');
+INSERT INTO `equipe378981`.`cursos` (`cod_curso`, `nome_curso`) VALUES (06, 'Filosofia');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`alunos`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES (0000001, 'Samuel Falcão Xavier', 01, 'Rua A', '2015-02-25', '2019-12-31', 03);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000002, 'Raíssa Frois Camarinho', 02, 'Rua B', '2016-07-25', '2021-07-15', 04);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000003, 'Nataniel Sardo Grilo', 03, 'Rua C', '2016-02-25', '2020-12-31', 05);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000004, 'André Mourão Taveiros', 04, 'Rua D', '2017-02-25', '2022-12-31', 06);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`) VALUES(0000005, 'Virgínia Vaz Caeira', 05, 'Rua E', '2018-07-25', '2022-07-15', 07);
+INSERT INTO `equipe473532`.`alunos` (`matricula_aluno`, `nome`, `cod_curso`, `endereco`, `data_de_ingresso`, `data_de_conclusao`, `id_usuario`)VALUES(0000006, 'Lucas Dantas Abranches', 06, 'Rua F', '2019-02-25', '2022-12-31', 08);
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`professores`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES (000001, 'Priscila Cachoeira Velasco', 'Rua G', '+5504188975498632', 01, '2016-04-03', 'DE');
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000002, 'Janilson Toscano Freire', 'Rua H', '+5504188964821975', 02, '2008-09-24', 'DE');
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000003, 'Manuela Lagos Peixoto', 'Rua I', '+5504188998547135', 03, '2011-01-17', '20h');
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000004, 'Reinaldo Reino Ponte', 'Rua J', '+5504188935748912', 04, '2008-05-16', '20h');
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000005, 'Melina Rodrigues Mondragão', 'Rua K', '+5504188958497621', 05, '2008-08-23', '40h');
+INSERT INTO `equipe473532`.`professores` (`mat_siape`, `nome`, `endereco`, `telefone_celular`, `codigo_curso`, `data_de_contratacao`, `regime_de_trabalho`, `usuarios_id`) VALUES(000006, 'Silvana Serro Lampreia', 'Rua L', '+5504188974851296', 06, '2008-10-02', '40h');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`funcionarios`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`funcionarios` (`matricula_funcionario`, `nome`, `endereco`, `id_usuario`) VALUES (498756, 'Levi Vaz Sousa', 'Rua A', 09);
+INSERT INTO `equipe473532`.`funcionarios` (`matricula_funcionario`, `nome`, `endereco`, `id_usuario`) VALUES(421589, 'Paula Amorim Ferreira', 'Rua B', 10);
+INSERT INTO `equipe473532`.`funcionarios` (`matricula_funcionario`, `nome`, `endereco`, `id_usuario`) VALUES(432517, 'Sandro Meneses Moura', 'Rua C', 11);
+INSERT INTO `equipe473532`.`funcionarios` (`matricula_funcionario`, `nome`, `endereco`, `id_usuario`) VALUES(406731, 'Iolanda Rodrigues Silva', 'Rua D', 12);
+INSERT INTO `equipe473532`.`funcionarios` (`matricula_funcionario`, `nome`, `endereco`, `id_usuario`) VALUES(457328, 'Rebeca Fragoso Mesquita', 'Rua E', 13);
+INSERT INTO `equipe473532`.`funcionarios` (`matricula_funcionario`, `nome`, `endereco`, `id_usuario`) VALUES(416574, 'Yago Pires Cardoso', 'Rua F', 14);
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`telefones_funcionarios`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`telefones_funcionarios` (`telefone_ID`, `numero_telefone`, `matricula_funcionario`) VALUES (001, '+5502185994367854', 406731);
+INSERT INTO `equipe473532`.`telefones_funcionarios` (`telefone_ID`, `numero_telefone`, `matricula_funcionario`) VALUES(002, '+5502185992587941', 406731);
+INSERT INTO `equipe473532`.`telefones_funcionarios` (`telefone_ID`, `numero_telefone`, `matricula_funcionario`) VALUES(003, '+5502185991369428', 432517);
+INSERT INTO `equipe473532`.`telefones_funcionarios` (`telefone_ID`, `numero_telefone`, `matricula_funcionario`) VALUES(004, '+5502185994798203', 432517);
+INSERT INTO `equipe473532`.`telefones_funcionarios` (`telefone_ID`, `numero_telefone`, `matricula_funcionario`) VALUES(005, '+5502185992009866', 457328);
+INSERT INTO `equipe473532`.`telefones_funcionarios` (`telefone_ID`, `numero_telefone`, `matricula_funcionario`) VALUES(006, '+5502185994362069', 457328);
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`telefones_alunos`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES (001, '+5504188912345678', 0000001);
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES(002, '+5504188998765432', 0000001);
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES(003, '+5504188951697843', 0000002);
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES(004, '+5504188961475298', 0000003);
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES(005, '+5504188995387459', 0000004);
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES(006, '+5504188994381576', 0000005);
+INSERT INTO `equipe473532`.`telefones_alunos` (`telefone_ID`, `numero_telefone`, `matricula_aluno`) VALUES(007, '+5504188957894314', 0000006);
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `equipe473532`.`escreve`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `equipe473532`;
+INSERT INTO `equipe473532`.`escreve` (`autores_email`, `livros_ISBN`) VALUES ('anabeatrizbarbosa@hotmail.com', 9788525058393);
+INSERT INTO `equipe473532`.`escreve` (`autores_email`, `livros_ISBN`) VALUES('thalitareboucas@hotmail.com', 9788579800511);
+INSERT INTO `equipe473532`.`escreve` (`autores_email`, `livros_ISBN`) VALUES('jkrowling@hotmail.com', 9788532530783);
+INSERT INTO `equipe473532`.`escreve` (`autores_email`, `livros_ISBN`) VALUES('suzannecollins@hotmail.com', 9789722342391);
+INSERT INTO `equipe473532`.`escreve` (`autores_email`, `livros_ISBN`) VALUES('rhondabyrne@hotmail.com', 9788543101972);
+
+COMMIT;
