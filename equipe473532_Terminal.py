@@ -43,11 +43,21 @@ def telaAdmin():
 try:
     with connect(
         host="localhost",
-        user=input("Digite o nome de usuário do MySQL: "),
-        password=getpass("Digite a senha do MySQL: "),
+        user=input("Digite o nome de usuário do servidor MySQL: "),
+        password=getpass("Digite a senha do servidor MySQL (a senha é ocultada neste terminal): "),
         database="equipe473532",
     ) as connection:
         print(connection)
+
+        loginUsuarioBD = input("\nDigite o LOGIN do usuário dentro do Banco de Dados da biblioteca: ")
+        #senhaUsuarioBD = getpass("\nDigite a SENHA do usuário dentro do BD da biblioteca (a senha é ocultada neste terminal): ")
+        
+        logarUsuarioBD = 'mysql -u {loginUsuarioBD} -p'.format(loginUsuarioBD=loginUsuarioBD)
+
+        with connection.cursor() as cursor:
+            cursor.execute(logarUsuarioBD)
+            connection.commit();
+        print("\n")
 
         opcaoAdmin = telaAdmin();
 

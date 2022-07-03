@@ -542,7 +542,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE
 ON equipe473532.*
 TO Admin@localhost
 WITH GRANT OPTION;
-
+FLUSH PRIVILEGES;
 -- -----------------------------------------------------
 -- Create user da bibliotecaria
 -- -----------------------------------------------------
@@ -552,15 +552,19 @@ CREATE user 'claraC' IDENTIFIED BY 'cla202';
 GRANT SELECT
 ON equipe473532.livros
 TO claraC@localhost;
+FLUSH PRIVILEGES;
 GRANT SELECT
 ON equipe473532.usuarios
 TO claraC@localhost;
+FLUSH PRIVILEGES;
 GRANT SELECT
 ON equipe473532.reserva
 TO claraC@localhost;
+FLUSH PRIVILEGES;
 GRANT UPDATE
 ON equipe473532.livros
 TO claraC@localhost;
+FLUSH PRIVILEGES;
 
 -- -----------------------------------------------------
 -- Create user dos usuarios 
@@ -572,9 +576,11 @@ CREATE user 'samualM' IDENTIFIED BY 'samu222';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'samualM';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'samualM';
+FLUSH PRIVILEGES;
 
 
 CREATE user 'raissaR' IDENTIFIED BY 'rai569';
@@ -582,9 +588,11 @@ CREATE user 'raissaR' IDENTIFIED BY 'rai569';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'raissaR';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'raissaR';
+FLUSH PRIVILEGES;
 
 
 CREATE user 'natanielN' IDENTIFIED BY 'natan036';
@@ -592,9 +600,11 @@ CREATE user 'natanielN' IDENTIFIED BY 'natan036';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'natanielN';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'natanielN';
+FLUSH PRIVILEGES;
 
 
 
@@ -603,9 +613,11 @@ CREATE user 'andreA' IDENTIFIED BY 'andre378';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'andreA';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'andreA';
+FLUSH PRIVILEGES;
 
 
 
@@ -614,9 +626,11 @@ CREATE user 'virginiaV' IDENTIFIED BY 'vi459';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'virginiaV';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'virginiaV';
+FLUSH PRIVILEGES;
 
 
 
@@ -625,9 +639,11 @@ CREATE user 'lucasL' IDENTIFIED BY 'lucas941';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'lucasL';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'lucasL';
+FLUSH PRIVILEGES;
 
 
 
@@ -636,9 +652,11 @@ CREATE user 'leviL' IDENTIFIED BY 'levi058';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'leviL';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'leviL';
+FLUSH PRIVILEGES;
 
 
 
@@ -647,9 +665,11 @@ CREATE user 'paulaP' IDENTIFIED BY 'paula654';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'paulaP';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'paulaP';
+FLUSH PRIVILEGES;
 
 
 
@@ -658,9 +678,11 @@ CREATE user 'sandroS' IDENTIFIED BY 'sandro875';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'sandroS';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'sandroS';
+FLUSH PRIVILEGES;
 
 
 
@@ -669,9 +691,11 @@ CREATE user 'iolandaI' IDENTIFIED BY 'iol369';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'iolandaI';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'iolandaI';
+FLUSH PRIVILEGES;
 
 
 
@@ -680,9 +704,11 @@ CREATE user 'rebecaR' IDENTIFIED BY 'reb147';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'rebecaR';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'rebecaR';
+FLUSH PRIVILEGES;
 
 
 
@@ -691,9 +717,11 @@ CREATE user 'yagoY' IDENTIFIED BY 'yago258';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'yagoY';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'yagoY';
+FLUSH PRIVILEGES;
 
 
 
@@ -702,9 +730,11 @@ CREATE user 'priscilaC' IDENTIFIED BY 'pris985';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'priscilaC';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'priscilaC';
+FLUSH PRIVILEGES;
 
 
 
@@ -713,9 +743,11 @@ CREATE user 'janilsonT' IDENTIFIED BY 'janil831';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'janilsonT';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'janilsonT';
+FLUSH PRIVILEGES;
 
 
 
@@ -724,9 +756,11 @@ CREATE user 'manuelaL' IDENTIFIED BY 'manu437';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'manuelaL';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'manuelaL';
+FLUSH PRIVILEGES;
 
 
 
@@ -735,9 +769,11 @@ CREATE user 'reinaldoR' IDENTIFIED BY 'rei718';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'reinaldoR';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'reinaldoR';
+FLUSH PRIVILEGES;
 
 
 
@@ -746,9 +782,11 @@ CREATE user 'melinaR' IDENTIFIED BY 'melin256';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'melinaR';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'melinaR';
+FLUSH PRIVILEGES;
 
 
 
@@ -757,8 +795,10 @@ CREATE user 'silvanaS' IDENTIFIED BY 'silva514';
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
 TO 'silvanaS';
+FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
 TO 'silvanaS';
+FLUSH PRIVILEGES;
 
 
