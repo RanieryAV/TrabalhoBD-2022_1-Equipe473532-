@@ -411,7 +411,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `equipe473532`;
-INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (01, 'Admin', 'root', 'administrador');
+INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (01, 'Admin', 'Root', 'administrador');
 INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (02, 'claraC', 'cla202', 'bibliotecario');
 INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (03, 'samualM', 'samu222', 'alunos');
 INSERT INTO `equipe473532`.`usuarios` (`id`, `login`, `senha`, `tipo_usuario`) VALUES (04, 'raissaR', 'rai569','alunos');
@@ -536,7 +536,7 @@ COMMIT;
 -- Create user do admin
 -- -----------------------------------------------------
 
-CREATE user Admin@localhost;
+CREATE user 'Admin' IDENTIFIED BY 'Root';
 
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON equipe473532.*
@@ -547,7 +547,7 @@ WITH GRANT OPTION;
 -- Create user da bibliotecaria
 -- -----------------------------------------------------
 
-CREATE user claraC@localhost;
+CREATE user 'claraC' IDENTIFIED BY 'cla202';
 
 GRANT SELECT
 ON equipe473532.livros
@@ -567,198 +567,198 @@ TO claraC@localhost;
 -- -----------------------------------------------------
 
 
-CREATE user samualM IDENTIFIED BY 'samu222';
+CREATE user 'samualM' IDENTIFIED BY 'samu222';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO samualM IDENTIFIED BY 'samu222';
+TO 'samualM';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO samualM IDENTIFIED BY 'samu222';
+TO 'samualM';
 
 
-CREATE user raissaR IDENTIFIED BY 'rai569';
+CREATE user 'raissaR' IDENTIFIED BY 'rai569';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO raissaR IDENTIFIED BY 'rai569';
+TO 'raissaR';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO raissaR IDENTIFIED BY 'rai569';
+TO 'raissaR';
 
 
-CREATE user natanielN IDENTIFIED BY 'natan036';
+CREATE user 'natanielN' IDENTIFIED BY 'natan036';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO natanielN IDENTIFIED BY 'natan036';
+TO 'natanielN';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO natanielN IDENTIFIED BY 'natan036';
+TO 'natanielN';
 
 
 
-CREATE user andreA IDENTIFIED BY 'andre378';
+CREATE user 'andreA' IDENTIFIED BY 'andre378';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO andreA IDENTIFIED BY 'andre378';
+TO 'andreA';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO andreA IDENTIFIED BY 'andre378';
+TO 'andreA';
 
 
 
-CREATE user virginiaV IDENTIFIED BY 'vi459';
+CREATE user 'virginiaV' IDENTIFIED BY 'vi459';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO virginiaV IDENTIFIED BY 'vi459';
+TO 'virginiaV';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO virginiaV IDENTIFIED BY 'vi459';
+TO 'virginiaV';
 
 
 
-CREATE user lucasL IDENTIFIED BY 'lucas941';
+CREATE user 'lucasL' IDENTIFIED BY 'lucas941';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO lucasL IDENTIFIED BY 'lucas941';
+TO 'lucasL';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO lucasL IDENTIFIED BY 'lucas941';
+TO 'lucasL';
 
 
 
-CREATE user leviL IDENTIFIED BY levi058';
+CREATE user 'leviL' IDENTIFIED BY 'levi058';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO leviL IDENTIFIED BY 'levi058';
+TO 'leviL';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO leviL IDENTIFIED BY 'levi058';
+TO 'leviL';
 
 
 
-CREATE user paulaP IDENTIFIED BY 'paula654';
+CREATE user 'paulaP' IDENTIFIED BY 'paula654';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO paulaP IDENTIFIED BY 'paula654';
+TO 'paulaP';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO paulaP IDENTIFIED BY 'paula654';
+TO 'paulaP';
 
 
 
-CREATE user sandroS IDENTIFIED BY 'sandro875';
+CREATE user 'sandroS' IDENTIFIED BY 'sandro875';
 
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO sandroS IDENTIFIED BY 'sandro875';
+TO 'sandroS';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO sandroS IDENTIFIED BY 'sandro875';
+TO 'sandroS';
 
 
 
-CREATE user iolandaI IDENTIFIED BY 'iol369';
+CREATE user 'iolandaI' IDENTIFIED BY 'iol369';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO iolandaI IDENTIFIED BY 'iol369';
+TO 'iolandaI';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO iolandaI IDENTIFIED BY 'iol369';
+TO 'iolandaI';
 
 
 
-CREATE user rebecaR IDENTIFIED BY 'reb147';
+CREATE user 'rebecaR' IDENTIFIED BY 'reb147';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO rebecaR IDENTIFIED BY 'reb147';
+TO 'rebecaR';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO rebecaR IDENTIFIED BY 'reb147';
+TO 'rebecaR';
 
 
 
-CREATE user yagoY IDENTIFIED BY 'yago258';
+CREATE user 'yagoY' IDENTIFIED BY 'yago258';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO yagoY IDENTIFIED BY 'yago258';
+TO 'yagoY';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO yagoY IDENTIFIED BY 'yago258';
+TO 'yagoY';
 
 
 
-CREATE user priscilaC IDENTIFIED BY 'pris985';
+CREATE user 'priscilaC' IDENTIFIED BY 'pris985';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO priscilaC IDENTIFIED BY 'pris985';
+TO 'priscilaC';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO priscilaC IDENTIFIED BY 'pris985';
+TO 'priscilaC';
 
 
 
-CREATE user janilsonT IDENTIFIED BY 'janil831';
+CREATE user 'janilsonT' IDENTIFIED BY 'janil831';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO janilsonT IDENTIFIED BY 'janil831';
+TO 'janilsonT';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO janilsonT IDENTIFIED BY 'janil831';
+TO 'janilsonT';
 
 
 
-CREATE user manuelaL IDENTIFIED BY 'manu437';
+CREATE user 'manuelaL' IDENTIFIED BY 'manu437';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO manuelaL IDENTIFIED BY 'manu437';
+TO 'manuelaL';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO manuelaL IDENTIFIED BY 'manu437';
+TO 'manuelaL';
 
 
 
-CREATE user reinaldoR IDENTIFIED BY 'rei718';
+CREATE user 'reinaldoR' IDENTIFIED BY 'rei718';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO reinaldoR IDENTIFIED BY 'rei718';
+TO 'reinaldoR';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO reinaldoR IDENTIFIED BY 'rei718';
+TO 'reinaldoR';
 
 
 
-CREATE user melinaR IDENTIFIED BY 'melin256';
+CREATE user 'melinaR' IDENTIFIED BY 'melin256';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO melinaR IDENTIFIED BY 'melin256';
+TO 'melinaR';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO melinaR IDENTIFIED BY 'melin256';
+TO 'melinaR';
 
 
 
-CREATE user silvanaS IDENTIFIED BY 'silva514';
+CREATE user 'silvanaS' IDENTIFIED BY 'silva514';
  
-GRANT SELECT(titulo, autores, editora, codigo_da_categoria, ano_lancamento)
+GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO silvanaS IDENTIFIED BY 'silva514';
+TO 'silvanaS';
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO silvanaS IDENTIFIED BY 'silva514';
+TO 'silvanaS';
 
 
