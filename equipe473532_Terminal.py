@@ -31,11 +31,11 @@ def telaTeste():
                 for linha in resultado:
                     print(linha)
 
-def telaAdmin():
-    print("\nBem-vindo, Administrador!\n")
+def telaBDlogado():
+    print("\nBem-vindo!\n")
     return int(input("Escolha a ação: " +
-                        "\n<1> - para Fazer Insercoes" +
-                        "\n<2> - para Fazer Remocoes" +
+                        "\n<1> - para Fazer Insercoes (somente Admin)" +
+                        "\n<2> - para Fazer Remocoes (somente Admin)" +
                         "\n<3> - para Fazer Alteracoes" +
                         "\n<4> - para Fazer Consultas" +
                         "\nDigite: "))
@@ -43,25 +43,25 @@ def telaAdmin():
 try:
     with connect(
         host="localhost",
-        user=input("Digite o nome de usuário do servidor MySQL: "),
-        password=getpass("Digite a senha do servidor MySQL (a senha é ocultada neste terminal): "),
+        user=input("Digite o LOGIN do usuário dentro do Banco de Dados da biblioteca: "),
+        password=getpass("Digite a SENHA do usuário dentro do BD da biblioteca (a senha é ocultada neste terminal): "),
         database="equipe473532",
     ) as connection:
         print(connection)
 
-        loginUsuarioBD = input("\nDigite o LOGIN do usuário dentro do Banco de Dados da biblioteca: ")
+        #loginUsuarioBD = input("\nDigite o LOGIN do usuário dentro do Banco de Dados da biblioteca: ")
         #senhaUsuarioBD = getpass("\nDigite a SENHA do usuário dentro do BD da biblioteca (a senha é ocultada neste terminal): ")
         
-        logarUsuarioBD = 'mysql -u {loginUsuarioBD} -p'.format(loginUsuarioBD=loginUsuarioBD)
+        #logarUsuarioBD = 'mysql -u {loginUsuarioBD} -p'.format(loginUsuarioBD=loginUsuarioBD)
 
-        with connection.cursor() as cursor:
-            cursor.execute(logarUsuarioBD)
-            connection.commit();
-        print("\n")
+        #with connection.cursor() as cursor:
+        #    cursor.execute(logarUsuarioBD)
+        #    connection.commit();
+        #print("\n")
 
-        opcaoAdmin = telaAdmin();
+        opcaoBDlogado = telaBDlogado();
 
-        if(opcaoAdmin == 1):#Opção 1 => Fazer inserções como Administrador
+        if(opcaoBDlogado == 1):#Opção 1 => Fazer inserções como Administrador
             menu="1"
             while menu=="1" or menu=="2" or menu=="3" or menu=="4" or menu=="5" or menu=="6" or menu=="7":
                 menu=input("Escolha a ação: " +
@@ -190,7 +190,7 @@ try:
                         estadoInserirTelAlunos = int(input("\nPara inserir outro telefone, digite <1>. Caso contrário, digite qualquer outra tecla. Digite: "))
                         print("\n")
                     print("\n")
-        elif(opcaoAdmin == 2):#Opção 2 => Fazer remoções como Administrador
+        elif(opcaoBDlogado == 2):#Opção 2 => Fazer remoções como Administrador
             menu="1"
             while menu=="1" or menu=="2" or menu=="3" or menu=="4" or menu=="5" or menu=="6" or menu=="7":
                 menu=input("Escolha a ação: " +
@@ -294,7 +294,7 @@ try:
 
                     
                     print("\n")
-        elif(opcaoAdmin == 3):#Opção 3 => Fazer alterações como Administrador
+        elif(opcaoBDlogado == 3):#Opção 3 => Fazer alterações como Administrador
             menu="1"
             while menu=="1" or menu=="2" or menu=="3" or menu=="4" or menu=="5" or menu=="6" or menu=="7":
                 menu=input("Escolha a ação: " +
@@ -423,7 +423,7 @@ try:
                         estadoInserirTelAlunos = int(input("\nPara inserir outro telefone, digite <1>. Caso contrário, digite qualquer outra tecla. Digite: "))
                         print("\n")
                     print("\n")
-        elif(opcaoAdmin == 4):#Opção 4 => Fazer consultas como Administrador
+        elif(opcaoBDlogado == 4):#Opção 4 => Fazer consultas como Administrador
             menu="1"
             while menu=="1" or menu=="2" or menu=="3" or menu=="4" or menu=="5" or menu=="6" or menu=="7":
                 menu=input("Escolha a ação: " +

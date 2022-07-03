@@ -536,34 +536,34 @@ COMMIT;
 -- Create user do admin
 -- -----------------------------------------------------
 
-CREATE user 'Admin' IDENTIFIED BY 'Root';
+CREATE user 'Admin'@'localhost' IDENTIFIED BY 'Root';
 
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON equipe473532.*
-TO Admin@localhost
+TO 'Admin'@localhost
 WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 -- -----------------------------------------------------
 -- Create user da bibliotecaria
 -- -----------------------------------------------------
 
-CREATE user 'claraC' IDENTIFIED BY 'cla202';
+CREATE user 'claraC'@'localhost' IDENTIFIED BY 'cla202';
 
 GRANT SELECT
 ON equipe473532.livros
-TO claraC@localhost;
+TO 'claraC'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT
 ON equipe473532.usuarios
-TO claraC@localhost;
+TO 'claraC'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT
 ON equipe473532.reserva
-TO claraC@localhost;
+TO 'claraC'@localhost;
 FLUSH PRIVILEGES;
 GRANT UPDATE
 ON equipe473532.livros
-TO claraC@localhost;
+TO 'claraC'@localhost;
 FLUSH PRIVILEGES;
 
 -- -----------------------------------------------------
@@ -571,234 +571,234 @@ FLUSH PRIVILEGES;
 -- -----------------------------------------------------
 
 
-CREATE user 'samualM' IDENTIFIED BY 'samu222';
+CREATE user 'samualM'@'localhost' IDENTIFIED BY 'samu222';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'samualM';
+TO 'samualM'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'samualM';
+TO 'samualM'@localhost;
 FLUSH PRIVILEGES;
 
 
-CREATE user 'raissaR' IDENTIFIED BY 'rai569';
+CREATE user 'raissaR'@'localhost' IDENTIFIED BY 'rai569';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'raissaR';
+TO 'raissaR'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'raissaR';
+TO 'raissaR'@localhost;
 FLUSH PRIVILEGES;
 
 
-CREATE user 'natanielN' IDENTIFIED BY 'natan036';
+CREATE user 'natanielN'@'localhost' IDENTIFIED BY 'natan036';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'natanielN';
+TO 'natanielN'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'natanielN';
+TO 'natanielN'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'andreA' IDENTIFIED BY 'andre378';
+CREATE user 'andreA'@'localhost' IDENTIFIED BY 'andre378';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'andreA';
+TO 'andreA'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'andreA';
+TO 'andreA'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'virginiaV' IDENTIFIED BY 'vi459';
+CREATE user 'virginiaV'@'localhost' IDENTIFIED BY 'vi459';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'virginiaV';
+TO 'virginiaV'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'virginiaV';
+TO 'virginiaV'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'lucasL' IDENTIFIED BY 'lucas941';
+CREATE user 'lucasL'@'localhost' IDENTIFIED BY 'lucas941';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'lucasL';
+TO 'lucasL'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'lucasL';
+TO 'lucasL'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'leviL' IDENTIFIED BY 'levi058';
+CREATE user 'leviL'@'localhost' IDENTIFIED BY 'levi058';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'leviL';
+TO 'leviL'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'leviL';
+TO 'leviL'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'paulaP' IDENTIFIED BY 'paula654';
+CREATE user 'paulaP'@'localhost' IDENTIFIED BY 'paula654';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'paulaP';
+TO 'paulaP'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'paulaP';
+TO 'paulaP'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'sandroS' IDENTIFIED BY 'sandro875';
+CREATE user 'sandroS'@'localhost' IDENTIFIED BY 'sandro875';
 
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'sandroS';
+TO 'sandroS'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'sandroS';
+TO 'sandroS'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'iolandaI' IDENTIFIED BY 'iol369';
+CREATE user 'iolandaI'@'localhost' IDENTIFIED BY 'iol369';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'iolandaI';
+TO 'iolandaI'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'iolandaI';
+TO 'iolandaI'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'rebecaR' IDENTIFIED BY 'reb147';
+CREATE user 'rebecaR'@'localhost' IDENTIFIED BY 'reb147';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'rebecaR';
+TO 'rebecaR'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'rebecaR';
+TO 'rebecaR'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'yagoY' IDENTIFIED BY 'yago258';
+CREATE user 'yagoY'@'localhost' IDENTIFIED BY 'yago258';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'yagoY';
+TO 'yagoY'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'yagoY';
+TO 'yagoY'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'priscilaC' IDENTIFIED BY 'pris985';
+CREATE user 'priscilaC'@'localhost' IDENTIFIED BY 'pris985';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'priscilaC';
+TO 'priscilaC'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'priscilaC';
+TO 'priscilaC'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'janilsonT' IDENTIFIED BY 'janil831';
+CREATE user 'janilsonT'@'localhost' IDENTIFIED BY 'janil831';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'janilsonT';
+TO 'janilsonT'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'janilsonT';
+TO 'janilsonT'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'manuelaL' IDENTIFIED BY 'manu437';
+CREATE user 'manuelaL'@'localhost' IDENTIFIED BY 'manu437';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'manuelaL';
+TO 'manuelaL'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'manuelaL';
+TO 'manuelaL'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'reinaldoR' IDENTIFIED BY 'rei718';
+CREATE user 'reinaldoR'@'localhost' IDENTIFIED BY 'rei718';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'reinaldoR';
+TO 'reinaldoR'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'reinaldoR';
+TO 'reinaldoR'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'melinaR' IDENTIFIED BY 'melin256';
+CREATE user 'melinaR'@'localhost' IDENTIFIED BY 'melin256';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'melinaR';
+TO 'melinaR'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'melinaR';
+TO 'melinaR'@localhost;
 FLUSH PRIVILEGES;
 
 
 
-CREATE user 'silvanaS' IDENTIFIED BY 'silva514';
+CREATE user 'silvanaS'@'localhost' IDENTIFIED BY 'silva514';
  
 GRANT SELECT(titulo, autores, editora, categoria_codigo_da_categoria, ano_lancamento)
 ON equipe473532.livros
-TO 'silvanaS';
+TO 'silvanaS'@localhost;
 FLUSH PRIVILEGES;
 GRANT SELECT, UPDATE
 ON equipe473532.reserva
-TO 'silvanaS';
+TO 'silvanaS'@localhost;
 FLUSH PRIVILEGES;
 
 
